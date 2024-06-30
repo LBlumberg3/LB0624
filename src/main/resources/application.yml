@@ -1,0 +1,21 @@
+---
+spring:
+    application:
+        name: "kewltewlz-rental-pos"
+info:
+    app:
+        name: ${spring.application.name}
+        version: ${spring.application.version}
+        description: Sample POS-style API for renting tools
+        java:
+            enabled: true
+            source: "@java.version@"
+            target: "@java.version@"
+management:
+    endpoints:
+        health:
+            show-components: "always"
+            show-details: "always"
+        web:
+            exposure:
+                include: health,info,mappings,prometheus
